@@ -42,6 +42,13 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         searchBar.delegate = self
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let songDetailViewController = segue.destination as? SongDetailViewController, let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("Error with preparing segue")
+        }
+        songDetailViewController.song = songs[indexPath.row]
+    }
 }
 
 extension ViewController: UITableViewDataSource {
