@@ -18,6 +18,7 @@ class SongDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateUI()
 
     }
     
